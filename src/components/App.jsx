@@ -3,9 +3,9 @@ import { Form } from './Form/Form';
 import { ContactList } from './ContactList/ContactList';
 import { useEffect } from 'react';
 
-const { useState } = require('react');
-const { Container } = require('./Global.styled');
-const { Section } = require('./Section/Section');
+import { useState } from 'react';
+import { Container } from './Global.styled';
+import { Section } from './Section/Section';
 
 // const BASE_STATE = [
 // 	{ id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -16,8 +16,8 @@ const { Section } = require('./Section/Section');
 
 const App = () => {
 	const [contacts, setContacts] = useState(() => {
-		const stringyfiedContacts = localStorage.getItem('contancts_key');
-		const parsedContacts = JSON.parse(stringyfiedContacts) ?? [];
+		const stringifyedContacts = localStorage.getItem('contacts_key');
+		const parsedContacts = JSON.parse(stringifyedContacts) ?? [];
 		return parsedContacts;
 	});
 	const [filter, setFilter] = useState('');
